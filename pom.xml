@@ -16,6 +16,31 @@
     </parent>
 -->
 
+    <properties>
+        <docker.image.prefix>springio</docker.image.prefix>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>myeureka/latest</imageName>
+                    <baseImage>java:8</baseImage>
+                    <dockerDirectory>src/main/</dockerDirectory>
+                    <entryPoint>["java", "-jar", "/ZSH-eureka-1.0-SNAPSHOT.jar"]</entryPoint>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>D:\Developers\IdeaProjects\MyEureka</directory>
+                            <include>ZSH-eureka-1.0-SNAPSHOT.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
