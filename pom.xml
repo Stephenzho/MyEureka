@@ -7,6 +7,7 @@
     <groupId>io.stephen.ZSH</groupId>
     <artifactId>ZSH-eureka</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
 
     <parent>
@@ -21,6 +22,7 @@
     </properties>
 
     <build>
+        <!-- 指定资源文件存放
         <resources>
             <resource>
                 <directory>src/main</directory>
@@ -33,7 +35,7 @@
                 <directory>src/main/resources</directory>
                 <targetPath>BOOT-INF/classes/</targetPath>
             </resource>
-        </resources>
+        </resources>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -52,6 +54,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <addResources>true</addResources>
                     <mainClass>${mainClass}</mainClass>
                 </configuration>
                 <executions>
